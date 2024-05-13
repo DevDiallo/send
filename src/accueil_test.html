@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./script.js"></script>
+    <style>
+
+
+
+        body {
+    background-color: #F0F8FF; /* Couleur d'arrière-plan claire et neutre pour le corps de la page */
+}
+
+div.center {
+    /*background-color: #2E8B57;  Couleur d'arrière-plan plus sombre (vert forêt) */
+    /*width: 50%;*/
+    /*margin: 0 auto;*/
+    text-align:right;
+    padding: 10px; /* Ajoute du rembourrage pour l'entête */
+}
+
+div.center a {
+    /*color: #ADFF2F;  Couleur des liens (vert chartreuse) */
+    margin: 30px;  /*Ajoute un espace entre les liens */
+    text-decoration: none; /* Retire le soulignement */
+    
+}
+
+
+
+.formulaire {
+    /*background-color: #87CEEB; /* Couleur d'arrière-plan bleu ciel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/*
+div.partie_solde {
+  background-color: #FFD700;  Couleur d'arrière-plan jaune doré 
+  position: absolute;
+  right: 0;
+  width: 300px;
+  height: 500px;
+  margin-top: 40px;
+  padding: 50px;
+} 
+
+div.transact {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 300px;
+  height: 400px;
+  
+  margin-top: 40px;
+}
+*/
+
+.partie_solde {
+  position: relative;
+  background-color: #FFD700;
+  margin-top: 100px;
+ 
+}
+.affichesolde{
+    margin-left: 785px;
+    margin-top: -200px;/* */
+}
+.transact {
+  position: relative;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  margin-top: 50px;
+  margin-left: 800px;
+}
+
+div.afficheText{
+    width: 600px; /* largeur du bloc */
+    height: 550px; /* hauteur du bloc */
+    overflow: hidden; /* cache le contenu débordant */
+    line-height: 3; /* espace entre les lignes */
+    text-overflow: ellipsis; /* ajoute des points de suspension si le texte dépasse la largeur du bloc */
+    display: -webkit-box; /* pour activer le comportement multi-lignes */
+    -webkit-line-clamp: 3; /* nombre maximum de lignes affichées */
+    -webkit-box-orient: vertical; /* orientation verticale du texte */
+    font-family: Arial, sans-serif; /* police de texte */
+    font-size: 25px; /* taille du texte */
+}
+
+
+
+
+    </style>
+</head>
+<div class="center" id="entete">
+    <a class="contact" id="contact" href="contact_link">contact</a>
+    <a class="propos" id="a propos" href="propos_link">a propos</a>
+    <a class="historique" id="historique" href="historique_link">historique</a>
+    
+    <a class="conexion" id="conexion" href="conexion_link.html" >connexion</a>
+    <a class="inscrir" id="inscrir" href="inscription_link.html">inscription </a>
+    
+    
+
+</div>
+<br>
+<body>
+   
+    
+    <div class="partie_solde" id="partie_solde">
+        <div class="afficheText">
+            Bienvenue sur KBS_TRANSFERT !
+    
+    KBS_TRANSFERT, votre partenaire de confiance pour des transferts d'argent rapides,
+    securises et abordables. Que vous envoyiez de l'argent a vos proches, a des amis ou a des partenaires commerciaux,
+    nous sommes la pour vous accompagner a chaque etape.
+    
+        </div>
+    <form class="affichesolde" id="affichesolde">
+        <label for="fsolde">solde</label>
+        <input type="text" id="fsolde" value="25"><br>
+
+        <!-- Utilisation de boutons de type button -->
+        <button type="button" id="depot">Deposer</button>
+        <button type="button" id="retrait">Retirer</button>
+    </form>
+    
+
+    <div class="transact" id="ftrans">
+        <table style="width:100%">
+            <form id="transact_name">
+                <tr>
+                    <td>
+                        <label for="trans_name">Nom destinataire</label>
+                    </td>
+                    <td>
+                        <input type="text" id="transName" name="trans_name">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    
+        <table style="width:100%">
+            <form id="transact_num">
+                <tr>
+                    <td>
+                        <label for="trans_num">Numero destinataire</label>
+                    </td>
+                    <td>
+                        <input type="text" id="transNume" name="trans_num">
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <table style="width:100%">
+            <form id="transact_button">
+                <tr>
+                    <th>
+                        <button type="button" id="transact_button">Envoyer</button>
+                    </th>
+                   
+                </tr>
+            </form>
+        </table>
+    </div>
+    
+    </div>
+    
+    <div class="formulaire" id="formulaire">
+        <form id="formtransaction">
+            
+            <label for="fname">Nom</label>
+            <input type="text" id="fname" name="fname"><br>
+    
+            <label for="fprenom">Prenom</label>
+            <input type="text" id="fprenom" name="fprenom"><br>
+    
+            <label for="fcarte">N Carte</label>
+            <input type="text" id="fcarte" name="fcarte"><br>
+    
+            <label for="fcrypto">Cryptogramme</label>
+            <input type="text" id="fcryptogramme" name="fcryptogramme"><br>
+    
+            <label for="fMontant">Montant</label>
+            <input type="number" id="fMontant" name="fMontant"><br>
+            
+            <!-- Utilisation de boutons de type button -->
+            <button type="button" id="somme">deposer</button>
+            <button type="button" id="soustraction">Retirer</button> 
+        </form>
+        
+    </div>
+    <script>
+        const solde=document.getElementById("partie_solde") ;
+        const form=document.getElementById("formulaire") ;
+        form.style.visibility = 'hidden'; // Cache le bouton
+        const deposer=document.getElementById("depot");
+        const retirer=document.getElementById("retrait");
+        const som=document.getElementById("somme");
+        const soust=document.getElementById("soustraction");
+        deposer.addEventListener('click',function(){
+            solde.style.visibility = 'hidden'; // Cache le bouton
+            form.style.visibility = 'visible'; // Affiche le bouton
+            
+            soust.style.visibility = 'hidden'; // Cache le bouton
+            
+            
+
+        })
+        som.addEventListener('click',addition);
+        retirer.addEventListener('click',function(){
+            solde.style.visibility = 'hidden'; // Cache le bouton
+            form.style.visibility = 'visible'; // Affiche le bouton
+
+            som.style.visibility = 'hidden'; // Cache le bouton
+            soust.addEventListener('click',soustraction);
+        })
+
+
+
+    </script>
+</body>
+</html>
+

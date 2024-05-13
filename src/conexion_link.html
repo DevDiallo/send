@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th{
+            border: 1px solid black;
+            }
+            div.conecter{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conecter">
+            <form action="accueil_test.html" method="get" target="_blank">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="mail">E-mail</label>
+                        </td>  
+                        <td>
+                            <input type="email" id="mail_saisie" name="mail" placeholder="E_mail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Mot de passe</label>
+                        </td>
+                        <td>
+                            <input type="password" id="password" name="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="connexion">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+    
+</html>

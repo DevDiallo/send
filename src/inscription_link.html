@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style>
+            /* Styles CSS */
+            table, th {
+                border: 1px solide noir; /* Bordure pour table et headers */
+            }
+            div.inscription {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; /* Div centré verticalement et horizontalement */
+                margin: 0;
+            }
+            form {
+                border: 1px solide noir; /* Bordure pour le formulaire */
+                padding: 10px; /* Espacement intérieur */
+                border-radius: 5px; /* Coins arrondis */
+            }
+            form input, form label {
+                display: block;
+                margin-bottom: 10px; /* Espacement entre les éléments du formulaire */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="inscription">
+            <!-- Formulaire d'inscription -->
+            <form id="myForm" class="formulaire-donnees" action="http://localhost:3000/users" method="post" target="_parent">
+
+                <!-- Boutons radio pour le genre -->
+                <input type="radio" id="homme" name="genre" value="homme">
+                <label for="homme">Monsieur</label><br>
+                <input type="radio" id="femme" name="genre" value="femme">
+                <label for="femme">Madame</label><br>
+                
+                <!-- Champs texte pour le nom -->
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom"><br>
+                
+                <!-- Champs texte pour le prénom -->
+                <label for="prenom">Prenom :</label>
+                <input type="text" id="prenom" name="prenom"><br>
+                
+                <!-- Champs texte pour l'email -->
+                <label for="email">E-mail :</label>
+                <input type="text" id="email" name="email"><br>
+                
+                <!-- Champ mot de passe -->
+                <label for="mot_de_passe">Mot de passe :</label>
+                <input type="password" id="mot_de_passe" name="mot_de_passe"><br>
+                
+                <!-- Bouton de soumission -->
+                <input type="submit" value="S'inscrire">
+            </form>
+        </div>
+        <script>
+            // Écouteur d'événement sur la soumission du formulaire
+            document.getElementById('myForm').addEventListener('submit', async (e) => {
+              e.preventDefault(); // Empêcher le rechargement de la page
+          
+              // Récupérer les données du formulaire
+              const formData = new FormData(e.target);
+          
+              try {
+                // Envoyer les données au serveur avec fetch
+                const response = await fetch('http://localhost:3000/users', {
+                  method: 'POST',
+                  body: formData
+                });
+          
+                if (response.ok) {
+                  console.log('Données envoyées avec succès');
+                } else {
+                  console.error('Erreur lors de lenvoi des données');
+                }
+              } catch (error) {
+                console.error('Erreur lors de la requête fetch', error);
+              }
+            });
+          </script>
+    
+    </body>
+</html>
